@@ -1,3 +1,8 @@
-import { Audi, bmw } from "./Audi.js"
+const express = require('express');
+const app = express();
 
-console.log(Audi, bmw);
+const port = 8080;
+
+app.listen(port, () => {
+    console.log('a new server created.');
+})
