@@ -20,7 +20,7 @@ app.post('/data', (req, res) => {
         return res.status(400).send('Name is required');
     }
 
-    res.send(`Hello ${name}`)
+    res.send(`Hello ${name}`);
 });
 
 
