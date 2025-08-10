@@ -14,10 +14,15 @@ app.get('/', (req, res) => {
 
 
 app.get('/ig/:username', (req, res) => {
+    const followers = ['raj', 'sakhsi', 'batu', 'vishal', 'nikhil']
     let { username } = req.params;
-    res.render('home.ejs', { username })
+    res.render('home.ejs', { username, followers })
 })
 
+app.get('/diceroll', (req, res) => {
+    let diceVal = Math.floor(Math.random() * 6) + 1;
+    res.render('dice.ejs', { diceVal });
+})
 
 
 
