@@ -1,17 +1,17 @@
 body {
-    background-color: rgb(245, 245, 220);
+    background-color: rgba(170, 233, 238, 0.164);
 }
 
 h1 {
-    color: rgb(159, 6, 6);
+    color: maroon;
 }
 
 .box {
-    height: 100px;
-    width: 400px;
-    background-color: rgb(253, 227, 231);
-    border: 2px solid black;
+    background-color: rgba(213, 3, 3, 0.197);
+    width: 300px;
+    /* height: 100px; */
     padding: 10px;
+    border: 1px solid black;
     margin-bottom: 10px;
 }
 
