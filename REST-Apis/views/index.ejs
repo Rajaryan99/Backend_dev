@@ -11,25 +11,32 @@
 </head>
 
 <body>
-    <h1>Quara Posts</h1>
-    <% for(post of posts) {%>
-        <div class="box">
-            <h3 class="user">
-                @<%= post.username %>
-                    <hr>
-            </h3>
+    <div class="main">
+        <h1>Quara Posts</h1>
+        <% for(post of posts) {%>
+            <div class="box">
+                <h3 class="user">
+                    @<%= post.username %>
+                        <hr>
+                </h3>
 
-            <h4 class="con">
-                .. <%=post.content %>
-            </h4>
-            <br>
-            <a href="http://localhost:3000/posts/<%= post.id %>"> see in detail</a>
-        </div>
-        <%} %>
+                <h4 class="con">
+                    .. <%=post.content %>
+                </h4>
+                <br>
+                <a href="http://localhost:3000/posts/<%= post.id %>"> see in detail</a>
+                <a href="http://localhost:3000/posts/<%= post.id %>/edit"> Edit</a>
+                <form action="/posts/<%=post.id %>?_method=DELETE" method="post">
+                    <button>Delete post</button>
+                </form>
 
-            <br>
-            <br>
-            <span class="newbtn"><a href="http://localhost:3000/posts/new">Create new post..</a></span>
+            </div>
+            <%} %>
+
+                <br>
+                <br>
+                <span class="newbtn"><a href="http://localhost:3000/posts/new">Create new post..</a></span>
+    </div>
 </body>
 
 </html>

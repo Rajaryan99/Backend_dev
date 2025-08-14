@@ -1,14 +1,16 @@
 body {
-    background-color: rgba(170, 233, 238, 0.164);
+    background-color: rgba(8, 8, 8, 0.137);
+    padding: 0 20%;
 }
 
 h1 {
     color: maroon;
+    z-index: 999;
 }
 
 .box {
     background-color: rgba(213, 3, 3, 0.197);
-    width: 300px;
+    width: 500px;
     /* height: 100px; */
     padding: 10px;
     border: 1px solid black;
@@ -42,4 +44,14 @@ p {
     background-color: rgba(241, 135, 135, 0.437);
     display: inline-block;
     border-radius: 50px;
+}
+
+button {
+    margin-top: 10px;
+    background-color: maroon;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 8px;
+    cursor: pointer;
 }
