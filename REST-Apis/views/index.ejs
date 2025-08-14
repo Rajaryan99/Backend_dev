@@ -22,8 +22,14 @@
             <h4 class="con">
                 .. <%=post.content %>
             </h4>
+            <br>
+            <a href="http://localhost:3000/posts/<%= post.id %>"> see in detail</a>
         </div>
         <%} %>
+
+            <br>
+            <br>
+            <span class="newbtn"><a href="http://localhost:3000/posts/new">Create new post..</a></span>
 </body>
 
 </html>
