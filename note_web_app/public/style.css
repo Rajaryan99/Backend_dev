@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(18, 18, 18, 0.986);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainform {
+    color: #fff;
+}
+
+.inputbox {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #262626;
+    border: none;
+    font-size: 18px;
+}
+
+input::placeholder {
+    color: white;
+    opacity: .5;
+    /* Make sure it's not transparent */
+}
+
+.textbox {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #262626;
+    border: none;
+    font-size: 18px;
+}
+
+textarea::placeholder {
+    color: white;
+    opacity: 0.5;
+    /* Make sure it's not transparent */
+}
+
+button {
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(2, 91, 127);
+    border: none;
+    margin-bottom: 60px;
+    border-radius: 10px;
+}
+
+.task {
+    background-color: #262626;
+    width: 200px;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+    /* display: none; */
+
+}
+
+.task a {
+    text-decoration: none;
+    color: rgb(2, 79, 109);
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.tasks {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tasks h1 {
+    color: #4b4b4b;
+}

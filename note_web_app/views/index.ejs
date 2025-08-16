@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="form">
+            <form action="/create" method="post" class="mainform">
+                <input type="text" placeholder="Task Title" class="inputbox" name="title"> <br><br>
+                <textarea class="textbox" name="details" id="" rows="10" cols="35"
+                    placeholder="Write you taak here..."></textarea> <br><br>
+                <button> Create Task</button>
+            </form>
+        </div>
+
+        <div class="tasks">
+            <% if(files.length> 0) {%>
+                <% files.forEach(function(val){ %>
+                    <div class="task">
+                        <h4>
+                            <%= val%>
+                        </h4>
+                        <a href="/see">read more..</a>
+                    </div>
+
+                    <% }) %>
+                        <% } else {%>
+
+                            <h1>No Task</h1>
+                            <% }%>
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>
