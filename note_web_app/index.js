@@ -34,10 +34,13 @@ app.post('/create', (req, res) => {
     })
 })
 
-app.get('/see', (req, res) => {
-    let { title, content } = req.query
-    res.render('see', { title, content })
+app.get('/file/:filename', function (req, res) {
+    fs.readFile(`./files/${req.params.filename}`, "utf-8", function (err, filedata) {
+        res.render('see', { filename: req.params.filename, filedata: req.params.filedata })
+    })
 })
+
+
 
 app.listen(port, () => {
     console.log(`server is running on http://localhost:${port}`);
