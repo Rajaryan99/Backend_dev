@@ -1,9 +1,15 @@
 const express = require('express');
 const app = express();
 
-// 1st middleware
-app.use(() => {
-    console.log('I am a middleware');
+// 1st middleware and next();
+app.use((req, res, next) => {
+    console.log('I am a middleware'); // for every signle request it will send this 
+    next();
+});
+
+app.use((req, res, next) => {
+    console.log('I am a 2nd middleware'); // for every signle request it will send this 
+    next();
 });
 
 app.get('/', (req, res) => {
