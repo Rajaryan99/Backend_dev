@@ -8,5 +8,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "Backend mini project"
+  "description": "Backend mini project",
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
 }
