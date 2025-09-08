@@ -1,43 +1,37 @@
 const mongoose = require('mongoose');
 
-
 main().then(() => {
-    console.log('Database Connected!!');
+    console.log('connection successful!!')
 })
-    .catch(err => console.log(err));
+.catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/realtionship');
-
+  await mongoose.connect('mongodb://127.0.0.1:27017/relationship');
 }
 
 const userSchema = new mongoose.Schema({
     username: String,
-    addresses: [
-        {
-            location: String,
-            city: String,
-        },
-    ],
+    addresses: [{
+        _id: false,
+        location: String,
+        city: String,
+    }],
 });
 
-const user = mongoose.model('user', userSchema);
+const User = mongoose.model('User', userSchema);
 
-const addUser = async () => {
-    let user1 = new user({
-        username: "Tony Stark",
+const addUsers = async () => {
+    let user1 = new User({
+        username: "Raj Aryan",
         addresses: [{
-            location: "221A stark Tower\Stark industrie's",
-            city: "New York",
+            location: 'A77 DownTown streets',
+            city: 'New York',
         }],
     });
 
-    user1.addresses.push({
-        location: 'F69 wallStreet',
-        city: 'London'
-    });
-    let result = await user1.save();
-    console.log(result);
+   user1.addresses.push({location: 'N44 Bakers Street', city: "London"});
+   let result = await user1.save();
+   console.log(result);
 }
 
-addUser();
+addUsers();
