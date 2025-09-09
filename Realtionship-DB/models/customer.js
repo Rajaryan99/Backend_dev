@@ -28,24 +28,88 @@ const customerSchema = new mongoose.Schema({
 const Order = mongoose.model('Order', orderSchema);
 const Customer = mongoose.model("Customer", customerSchema);
 
-const addCustomer = async () => {
-    let cust1 = new Customer({
-        name: "Rahul Kumar",
+
+// Mongoose middleWare
+
+const addCust =  async () => {
+    let newCust = new Customer({
+        name: "VeerDash",
     });
 
-    let order1 = await Order.findOne({items: 'Chawmin'});
-    let order2 = await Order.findOne({items: 'Pizza'});
+    let newOrder = new Order({
+        items: "Cold Coffee",
+        price: "249",
+    });
 
-    cust1.orders.push(order1);
-    cust1.orders.push(order2);
+    newCust.orders.push(newOrder);
 
-    let result = await cust1.save();
-    console.log(result);
+    await newCust.save();
+    await newOrder.save();
+
+    console.log('Added new Customer');
 
 };
 
+const delcust = async () => {
+    let data = await Customer.findByIdAndDelete('68c0413ad60a8dc640661992');
+    console.log(data);
 
-addCustomer();
+}
+
+delcust();
+
+// addCust();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const addCustomer = async () => {
+//     let cust1 = new Customer({
+//         name: "Rahul Kumar",
+//     });
+
+//     let order1 = await Order.findOne({items: 'Chawmin'});
+//     let order2 = await Order.findOne({items: 'Pizza'});
+
+//     cust1.orders.push(order1);
+//     cust1.orders.push(order2);
+
+//     let result = await cust1.save();
+//     console.log(result);
+
+// };
+
+
+// addCustomer();
 
 
 
